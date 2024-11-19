@@ -13,8 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 //cors
-mongoose.set('strictQuery', true)
-app.use('/api',router)
+mongoose.set('strictQuery', true);
+app.use('/api',router);
 
 const PORT = 3009;
 connectDb().then(()=>{
