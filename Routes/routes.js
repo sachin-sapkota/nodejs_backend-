@@ -1,17 +1,11 @@
+require("dotenv").config()
 const express = require("express");
 const { axiosInstance } = require("../baseUrl");
 const { default: axios } = require("axios");
 const qs = require("qs");
 const Policy = require("../Models/Policy");
-require("dotenv").config()
 const Stripe = require('stripe');
-const cors = require("cors");
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-
-const app = express()
-app.use(cors());
-app.use(express.json());
-
 const router = express.Router();
 
 const GetAccessToken = async () => {
