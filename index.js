@@ -12,6 +12,7 @@ const corsOptions = {
 	optionsSuccessStatus: 204
 };
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
 app.use(express.json());
 
 //cors
