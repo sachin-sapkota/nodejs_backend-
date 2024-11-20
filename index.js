@@ -5,6 +5,7 @@ const cors = require('cors')
 const connectDb = require("./utils/db");
 const {axiosInstance} = require("./baseUrl");
 const Policy = require("./Models/Policy");
+const { default: axios } = require("axios");
 const qs = require("qs");
 const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
