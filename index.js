@@ -32,7 +32,7 @@ const GetAccessToken = async () => {
 
 // Rest of the code...
 
-app.get("/getAccessToken", async (req, res) => {
+app.get("/api/getAccessToken", async (req, res) => {
 	try {
 		const response = await GetAccessToken();
 		res.send({ success: true, access_token: response });
@@ -41,7 +41,7 @@ app.get("/getAccessToken", async (req, res) => {
 	}
 });
 
-app.post("/createquote", async (req, res) => {
+app.post("/api/createquote", async (req, res) => {
 	try {
 		const access_token = await GetAccessToken();
 		const response = await axiosInstance.post(
@@ -68,7 +68,7 @@ app.post("/createquote", async (req, res) => {
 	}
 });
 
-app.post("/fullquote", async (req, res) => {
+app.post("/api/fullquote", async (req, res) => {
 	try {
 		const access_token = await GetAccessToken();
 		const response = await axiosInstance.post(
@@ -98,7 +98,7 @@ app.post("/fullquote", async (req, res) => {
 	}
 });
 
-app.post("/issuequote", async (req, res) => {
+app.post("/api/issuequote", async (req, res) => {
 	try {
 		const access_token = await GetAccessToken();
 		console.log("access token  L ", access_token);
@@ -130,7 +130,7 @@ app.post("/issuequote", async (req, res) => {
 	}
 });
 
-app.post("/blockquote", async (req, res) => {
+app.post("/api/blockquote", async (req, res) => {
 	try {
 		const access_token = await GetAccessToken();
 		const response = await axiosInstance.post(
@@ -160,7 +160,7 @@ app.post("/blockquote", async (req, res) => {
 	}
 });
 
-app.get("/fetchalldocs/:entity/:value", async (req, res) => {
+app.get("/api/fetchalldocs/:entity/:value", async (req, res) => {
 	try {
 		const { entity, value } = req.params;
 		const access_token = await GetAccessToken();
@@ -183,7 +183,7 @@ app.get("/fetchalldocs/:entity/:value", async (req, res) => {
 	}
 });
 
-app.get("/downloaddoc/:entity/:value", async (req, res) => {
+app.get("/api/downloaddoc/:entity/:value", async (req, res) => {
 	try {
 		const { entity, value } = req.params;
 		const access_token = await GetAccessToken();
@@ -237,7 +237,7 @@ const GetAccessTokenProfile = async () => {
 	}
 };
 
-app.post("/companyprofile", async (req, res) => {
+app.post("/api/companyprofile", async (req, res) => {
 	const access_token = await GetAccessTokenProfile();
 
 	console.log(req.body, "body", access_token);
@@ -261,7 +261,7 @@ app.post("/companyprofile", async (req, res) => {
 			res.send({ success: false, message: err });
 		});
 });
-app.post("/address", async (req, res) => {
+app.post("/api/address", async (req, res) => {
 	console.log(req.body, "body");
 	try {
 		const access_token = await GetAccessTokenProfile();
@@ -281,7 +281,7 @@ app.post("/address", async (req, res) => {
 	}
 });
 
-app.post("/makePayment", async (req, res) => {
+app.post("/api/makePayment", async (req, res) => {
 	try {
 		const { amount, proposal } = req.body; // Assuming amount and proposal are sent in the request body
 
@@ -321,7 +321,7 @@ app.post("/makePayment", async (req, res) => {
 	}
 });
 
-app.post("/checkpayment", async (req, res) => {
+app.post("/api/checkpayment", async (req, res) => {
 	try {
 		const access_token = await GetAccessToken();  // Get access token
 		const { sessionId, proposalNo } = req.body;   // Extract sessionId and proposalNo from body
@@ -382,7 +382,7 @@ app.post("/checkpayment", async (req, res) => {
 	}
 });
 
-app.get("/Policies", async (req, res) => {
+app.get("/api/Policies", async (req, res) => {
 	try {
 		const policies = await Policy.find(); // Fetch all policies from the database
 		res.status(200).json(policies); // Return the policies in JSON format
@@ -394,7 +394,7 @@ app.get("/Policies", async (req, res) => {
 	}
 });
 
-app.get("/Policies/:ProposalNo", async (req, res) => {
+app.get("/api/Policies/:ProposalNo", async (req, res) => {
 	try {
 		const proposalNo = req.params.ProposalNo;
 		const policy = await Policy.findOne({ ProposalNo: proposalNo }); // Find policy by ProposalNo
