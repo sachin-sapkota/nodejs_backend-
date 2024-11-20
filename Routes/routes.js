@@ -203,7 +203,7 @@ router.get("/downloaddoc/:entity/:value", async (req, res) => {
   }
 });
 
-export const GetAccessTokenProfile = async () => {
+const GetAccessTokenProfile = async () => {
   const data = qs.stringify({
     grant_type: "client_credentials",
     client_id: "sureinsure-api",
@@ -230,7 +230,30 @@ export const GetAccessTokenProfile = async () => {
   }
 };
 
+router.post("/companyprofile", async (req, res) => {
+  const access_token = await GetAccessTokenProfile();
 
+  console.log(req.body, "body", access_token);
+  axios
+    .post(
+      "https://bpa-uat-australiaeast.chainthat.net/connector-api/route/companyInformation/v1/companyProfile",
+      {
+        companyIdentifierType: "ABN",
+        identifierValue: req.body.abn,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`, // Include the Bearer token in the Authorization header
+        },
+      }
+    )
+    .then((response) => {
+      res.send({ success: true, companyprofile: response.data });
+    })
+    .catch((err) => {
+      res.send({ success: false, message: err });
+    });
+});
 router.post("/address", async (req, res) => {
   console.log(req.body, "body");
   try {
