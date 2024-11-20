@@ -1,13 +1,18 @@
 require("dotenv").config()
 const mongoose = require('mongoose');
 const express = require('express');
-const bodyParser = require('body-parser');
 const router = require('./Routes/routes');
 const cors = require('cors')
 const connectDb = require("./utils/db");
 const app = express()
 
-app.use(cors());
+const corsOptions = {
+	origin: 'https://uat.iamiinsurance.com.au/',
+	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+	credentials: true,
+	optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 //cors
