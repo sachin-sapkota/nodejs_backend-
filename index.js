@@ -7,9 +7,8 @@ const connectDb = require("./utils/db");
 const app = express()
 
 const corsOptions = {
-	origin: 'https://uat.iamiinsurance.com.au/',
+	origin: 'https://uat.iamiinsurance.com.au',
 	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-	credentials: true,
 	optionsSuccessStatus: 204
 };
 app.use(cors(corsOptions));
