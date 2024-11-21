@@ -284,9 +284,8 @@ app.post("/api/address", async (req, res) => {
 
 app.post("/api/makePayment", async (req, res) => {
 	try {
-		const { amount, proposal } = req.body; // Assuming amount and proposal are sent in the request body
+		const { amount, proposal } = req.body;
 
-		// Validate the amount and proposal
 		if (!amount || !proposal) {
 			return res.status(400).json({
 				success: false,
@@ -294,23 +293,21 @@ app.post("/api/makePayment", async (req, res) => {
 			});
 		}
 
-		// Create a Checkout session
 		const session = await stripe.checkout.sessions.create({
-			payment_method_types: ['card'], // Specify payment methods
+			payment_method_types: ['card'],
 			line_items: [{
 				price_data: {
-					currency: "aud", // Currency
+					currency: "aud",
 					product_data: {
-						name: `Proposal Number: ${proposal}`, // Product name
-						// You can add additional product details here if needed
+						name: `Proposal Number: ${proposal}`,
 					},
-					unit_amount: amount * 100, // Amount in cents
+					unit_amount: amount * 100,
 				},
 				quantity: 1,
 			}],
-			mode: 'payment', // Use 'payment' mode for one-time payments
-			success_url: `http://localhost:4000/payments/success?session_id={CHECKOUT_SESSION_ID}&proposalNo=${proposal}`, // Redirect URL after successful payment
-			cancel_url: 'http://localhost:4000/payments/error', // Redirect URL if payment is canceled
+			mode: 'payment',
+			success_url: `https://uat.iamiinsurance.com.au/payments/success?session_id={CHECKOUT_SESSION_ID}&proposalNo=${proposal}`,
+			cancel_url: 'https://uat.iamiinsurance.com.au/payments/error',
 		})
 
 		res.status(200).json({ url: session.url });
