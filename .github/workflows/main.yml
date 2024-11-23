@@ -1,21 +1,31 @@
+name: CI/CD Deployment
+
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
-  
+      - main  # Replace with your deployment branch
+
 jobs:
-  run_pull:
-    name: run pull
+  deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: install ssh keys
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install SSH Client
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Deploy to Server
+      env:
+        USERNAME: ${{ secrets.SERVER_USERNAME }}
+        PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
       run: |
-        install -m 600 -D /dev/null ~/.ssh/id_rsa
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-    - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-    - name: cleanup
-      run: rm -rf ~/.ssh
+        sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER_IP << EOF
+        # Replace this with your deployment commands
+        echo "Deploying application"
+        cd /root/nodejsapp/iami-backend
+        git pull origin main
+        ./deploy.sh
+        EOF
