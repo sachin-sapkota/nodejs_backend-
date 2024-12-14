@@ -1,0 +1,592 @@
+{
+  "ProductCode": "BPIP01",
+  "ProductVersion": "1.0",
+  "EffectiveDate": "2024-12-14T00:00:00",
+  "ExpiryDate": "2025-12-14T00:00:00",
+  "PolicyTerm": "",
+  "LineOfBusinessCode": "VAR",
+  "CarrierReferenceNumber": "",
+  "CarrierQuoteNumber": "",
+  "CarrierPolicyNo": "",
+  "AgencyCode": "",
+  "PolicyStage": "",
+  "CarrierPolicyStatus": "",
+  "CarrierProductCode": "OBP1",
+  "TrackingNumber": "",
+  "ABN": "",
+  "Turnover": "1000",
+  "BusinessName": "business name",
+  "NumberofEmployees": 10,
+  "JobDescription": "Electronic Information Storage Services",
+  "YearBusinessStarted": "2001",
+  "ANZSICCode": 5922,
+  "YearsInBusiness": 23,
+  "PolicyCustomerList": [
+    {
+      "CustomerName": "business name",
+      "CustomerType": "organization",
+      "JobDescription": "Electronic Information Storage Services",
+      "ANZSICCode": 5922,
+      "AddressLine1": "1 NORTH TERRACE",
+      "AddressLine2": "BANKSTOWN NSW AUS 2200",
+      "StreetName": "NORTH  TERRACE",
+      "City": "BANKSTOWN",
+      "StateOrProvinceCode": "NSW",
+      "PostalCode": "2200",
+      "CountryCode": "AUS",
+      "IsPrimaryAddress": "false",
+      "AddressTypeCode": "mailing",
+      "Territory": "AU-NSW",
+      "Latitude": -33.91613126,
+      "Longitude": 151.03809696,
+      "GnafPID": "eaq7WxvNKHNpPclmj3wykQ3eXa2SS6pUv2GPtw3nW24=",
+      "IsManualAddress": "false",
+      "FullAddress": "1 NORTH TERRACE BANKSTOWN NSW 2200 "
+    }
+  ],
+  "PolicyLobList": [
+    {
+      "ProductCode": "BPIP01",
+      "PolicyRiskList": [
+        {
+          "ProductElementCode": "R00005",
+          "AddressLine1": "1 NORTH TERRACE",
+          "AddressLine2": "BANKSTOWN NSW AUS 2200",
+          "City": "BANKSTOWN",
+          "StateOrProvinceCode": "AU-AU-NSW",
+          "PostalCode": "2200",
+          "CountryCode": "AUS",
+          "IsPrimaryAddress": "false",
+          "AddressTypeCode": "mailing",
+          "Territory": "AU-NSW",
+          "LocationType": "MODOB",
+          "TypeOfBusiness": "POO",
+          "YearBuilt": "2001-01-01",
+          "FloorConstruction": "CONC",
+          "RoofConstruction": "ASBES",
+          "WallConstruction": "BRICK",
+          "SandwichPanelorEPS": "10",
+          "NumberOfStoriesInTheBuilding": "2",
+          "AreAnyOfTheBuildingsHeritageListed": "yes",
+          "LocatedFloor": "GROFL",
+          "RiskInterestedParty": "insterested party",
+          "Latitude": -33.91613126,
+          "Longitude": 151.03809696,
+          "GnafPID": "eaq7WxvNKHNpPclmj3wykQ3eXa2SS6pUv2GPtw3nW24=",
+          "IsManualAddress": "false",
+          "TypeOfBusiness_Name": "Property owner only",
+          "LocationType_Name": "Modern Office Block",
+          "Flood_FL_rate_SME_Cts": "0.0001389496",
+          "Flood_FL_rate_SME_Bld": "0.0000760479",
+          "Bushfire_risk_score": "0.00000000",
+          "Cyclone_risk_score": "0.00000000",
+          "NoOfLevel": "8",
+          "Storm_risk_score_SME_Bld": "1.49132944",
+          "Storm_risk_score_SME_Cts": "1.69340809",
+          "Bld_elevation": "24.01",
+          "Flood_FL_ARI_GL": "9999.00000000",
+          "SecurityFeatures": "NOSEC",
+          "RoofMaterial": "Metal",
+          "RuralMetro": "Metro",
+          "TerrorLevyTier": "B",
+          "FullAddress": "1 NORTH TERRACE BANKSTOWN NSW 2200 ",
+          "JobDescription": "Electronic Information Storage Services",
+          "IsTheftCoverage": "true",
+          "IsMoneyCoverage": "true",
+          "IsGlassCoverage": "true",
+          "FloorConstruction_Name": "CONCRETE",
+          "WallConstruction_Name": "BRICK",
+          "LowestFloorYouOccupy_Name": "GROUND FLOOR",
+          "RoofConstruction_Name": "ASBESTOS",
+          "PolicyCoverageList": [
+            {
+              "ProductElementCode": "C0001785",
+              "LineOfBusinessCode": "GELI",
+              "BLCovFurtherQuestion1": "N",
+              "BLCovFurtherQuestion2": "N",
+              "BLCovFurtherQuestion3": "N",
+              "BLCovFurtherQuestion4": "N",
+              "BLInterestedParty": "10000",
+              "DirectorHistory": "DH3",
+              "CreditScore": "CS1",
+              "Import": "N",
+              "AnnualWages": "10000",
+              "Turnover": "1000",
+              "NumberofEmployees": 10,
+              "PropertyUnderYourCareorCustody": "10000",
+              "ConctororLabourHirePaynts": "10000",
+              "ClaimsInLastFiveYears": "Y",
+              "PolicyBenefitList": [
+                {
+                  "ProductElementCode": "B00863",
+                  "LimitOfLiability": 10000000,
+                  "TaxAuditSI": 10000,
+                  "Excess": "250"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "C0001786",
+              "LineOfBusinessCode": "PRP",
+              "IndemnityPeriod": "3M",
+              "IndemnityPeriod_Name": "3 Months",
+              "GrossProfit": "1000",
+              "AdditionIncreaseCostOfWorking": "10000",
+              "ClaimPreparationCost": "10000",
+              "BIInterestedParty": "10000",
+              "ClaimsInLastFiveYears": "N",
+              "PolicyBenefitList": [
+                {
+                  "Excess": "750",
+                  "ProductElementCode": "B00864",
+                  "Turnover": "1000"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "C0001787",
+              "LineOfBusinessCode": "PRP",
+              "PBCInterestedParty": "10000",
+              "ClaimsInLastFiveYears": "Y",
+              "PolicyBenefitList": [
+                {
+                  "ProductElementCode": "B00865",
+                  "BlanketCoverContent": "2300"
+                },
+                {
+                  "ProductElementCode": "B00866",
+                  "BlanketCoverStock": "1000",
+                  "Excess": "500"
+                },
+                {
+                  "ProductElementCode": "B00867",
+                  "ReplacementValueOfTotalContents": "1000",
+                  "Excess": "500"
+                }
+              ],
+              "PolicyEntityList": [
+                {
+                  "ProductElementCode": "PROPERTYBUSINESSCONTENTSPECIFIEDITEMS",
+                  "Category": "LNAT",
+                  "Category_Name": "Laptops, notepads and tablet",
+                  "ItemsDescription": "hello",
+                  "ReplacementValue": "1000"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "C0001788",
+              "LineOfBusinessCode": "PRP",
+              "BNCFurtherQuestion1": "N",
+              "BNCFurtherQuestion2": "Y",
+              "BNCFurtherQuestion3": "N",
+              "BNCFurtherQuestion4": "Y",
+              "BNCFurtherQuestion5": "",
+              "CommercialCookingClauseQuestion": "Y",
+              "FloodCoverQuestion": "N",
+              "ClaimsInLastFiveYears": "Y",
+              "PolicyBenefitList": [
+                {
+                  "ProductElementCode": "B00868",
+                  "SumInsured": "1000",
+                  "Excess": "250"
+                },
+                {
+                  "ProductElementCode": "B00869",
+                  "SumInsured": "2000",
+                  "Excess": "250"
+                },
+                {
+                  "ProductElementCode": "B00870",
+                  "SumInsured": "3000",
+                  "Excess": "250"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "C0001790",
+              "LineOfBusinessCode": "PRP",
+              "ClaimsInLastFiveYears": "Y",
+              "PolicyBenefitList": [
+                {
+                  "ProductElementCode": "B00874",
+                  "BlanketCover": 20000,
+                  "Excess": "1000",
+                  "DeteriorationOfStock": "1000",
+                  "ICOWIncreasedCostofWorking": "2000",
+                  "NumberofMachines": "10"
+                },
+                {
+                  "ProductElementCode": "B00875",
+                  "Excess": "1000",
+                  "ComputerLimit": "1000",
+                  "PortableElectronicEquipment": "2000",
+                  "OtherElectronicEquipment": "2000"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "C0001789",
+              "LineOfBusinessCode": "PRP",
+              "TMGFurtherQuestion1": "",
+              "ClaimsInLastFiveYears": "Y",
+              "PolicyBenefitList": [
+                {
+                  "ProductElementCode": "B00871",
+                  "TheftExcludingTobacco": "2100",
+                  "TheftTobacco": "8000",
+                  "Excess": "500",
+                  "SecurityAlarm": "monitoredAlarm",
+                  "DeadlocksonallExternalDoors": "false",
+                  "KeyOpredLocksonallExterWins": "false",
+                  "Barsecurscreensonallexternwins": "false"
+                },
+                {
+                  "ProductElementCode": "B00872",
+                  "Moneyonpremoutsidebusinesshrs": "2000",
+                  "Moneyonpremlockedsafe": "8000",
+                  "MoneyInPremisesDuringBuSInessSI": "2000",
+                  "MoneyInTranSItSI": "1000",
+                  "Moneyinapvtresidence": "1200",
+                  "Excess": "750"
+                },
+                {
+                  "ProductElementCode": "B00873",
+                  "GlassSumInsured": "Replacement Value",
+                  "SumInsured": "2000",
+                  "TypeofGlass": "external",
+                  "PercentageGlassAbvGrndFlr": "18",
+                  "PlateTypeGlass": "plate",
+                  "Excess": "500",
+                  "GlassInterestedParty": ""
+                }
+              ]
+            }
+          ],
+          "PolicyEntityList": [
+            {
+              "ProductElementCode": "BLENDORSEMENT",
+              "EndorsementType": "PreBind",
+              "EndorsementNo": "ENDO_012",
+              "EndorsementName": "Commercial Cooking Clause",
+              "ProductCoverageId": "C0001788",
+              "IsMandatory": "true",
+              "GrossPremium": "100.0",
+              "ValueType": "amount",
+              "SequenceNumber": "1",
+              "PolicyRiskId": "R00005",
+              "PolicyEntityList": [
+                {
+                  "ProductElementCode": "BLQUESTIONANSWER",
+                  "QuestionCode": "ENDO_012_Q1",
+                  "QuestionAnswer": "Does the business employ a professional cleaner to clean the exhaust or extraction system ducting annually?",
+                  "AnswerCode": "yes"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "BLENDORSEMENT",
+              "EndorsementType": "PreBind",
+              "EndorsementNo": "ENDO_008",
+              "EndorsementName": "Flood Cover",
+              "ProductCoverageId": "C0001788",
+              "IsMandatory": "true",
+              "GrossPremium": "800.0",
+              "ValueType": "amount",
+              "SequenceNumber": "2",
+              "PolicyRiskId": "R00005",
+              "PolicyEntityList": [
+                {
+                  "ProductElementCode": "BLQUESTIONANSWER",
+                  "QuestionCode": "ENDO_008_Q1",
+                  "QuestionAnswer": "Do you require flood cover?",
+                  "AnswerCode": "no"
+                }
+              ]
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "1",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "2",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "3",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "4",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "5",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "6",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "7",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "8",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "9",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "10",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "11",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "12",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "13",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "14",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "15",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "16",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "17",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "18",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "19",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "20",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "21",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "22",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "23",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "24",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "25",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "26",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "27",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "28",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "29",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "30",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "31",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "32",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "33",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "34",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "35",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "36",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "37",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "38",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "39",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "40",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "41",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "42",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "43",
+              "AnswerCode": "Y"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "44",
+              "AnswerCode": "N"
+            },
+            {
+              "ProductElementCode": "OCCUPATIONCLAUSEQA",
+              "QuestionId": "45",
+              "AnswerCode": "Y"
+            }
+          ]
+        }
+      ],
+      "PolicyEntityList": [
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001789",
+          "ClaimType": "LIAPD",
+          "ClaimType_Name": "Liability - Property damage",
+          "DateOfLoss": "2023-01-01T00:00:00",
+          "LossAmount": "1200"
+        },
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001788",
+          "DateOfLoss": "2022-01-01T00:00:00",
+          "ClaimType_Name": "Liability - Property damage",
+          "ClaimType": "LIAPD",
+          "LossAmount": "1000"
+        },
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001788",
+          "DateOfLoss": "2022-01-01T00:00:00",
+          "ClaimType_Name": "Lightnight or thunderbolt",
+          "ClaimType": "LINOT",
+          "LossAmount": "2000"
+        },
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001790",
+          "DateOfLoss": "2022-01-01T00:00:00",
+          "ClaimType_Name": "Accidental loss or damage",
+          "ClaimType": "ACLOD",
+          "LossAmount": "1000"
+        },
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001785",
+          "DateOfLoss": "",
+          "ClaimType_Name": "",
+          "ClaimType": "",
+          "LossAmount": ""
+        },
+        {
+          "ProductElementCode": "CLAIMS",
+          "ProductCoverageId": "C0001787",
+          "DateOfLoss": "2022-01-01T00:00:00",
+          "ClaimType_Name": "Civil Commotion or Riot",
+          "ClaimType": "CICOR",
+          "LossAmount": "1000"
+        }
+      ]
+    }
+  ],
+  "PolicyPaymentInfoList": [
+    { "BillingType": "ABI", "PaymentPlan": "PPC001", "IsInstallment": "N" }
+  ]
+}
+
+

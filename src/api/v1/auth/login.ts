@@ -4,7 +4,7 @@ import { redisClient } from '../../../common/config/redis';
 import { generateLoginToken, generateTokens, verifyToken } from '../../../common/utils/jwt';
 import { sendLoginLinkEmail } from '../../../common/utils/emailService';
 import { env } from '../../../common/utils/envConfig';
-import { validateLogin, validateLoginVerify } from '../../../common/utils/authValidation';
+import { validateLogin, validateLoginVerify } from '../../../common/validations/authValidations/authValidation';
 import { CronJob } from 'cron';
 const { FRONTEND_URL } = env;
 const isProduction = process.env.NODE_ENV === 'production';
@@ -69,8 +69,6 @@ export const loginInitHandler = async (req: Request, res: Response): Promise<voi
 
 
 
-
-
 export const loginVerifyHandler = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, token } = req.body;
@@ -106,7 +104,7 @@ export const loginVerifyHandler = async (req: Request, res: Response): Promise<v
       return;
     }
 
-    // Session is valid. Proceed to issue tokens
+
     const user = await User.findOne({ email });
     if (!user || !user.email_verified) {
       res.status(401).json({ message: 'No verified user found. Cannot issue tokens.' });

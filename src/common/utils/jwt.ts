@@ -25,10 +25,10 @@ export const verifyToken = (token: string, type: 'login'|'access' | 'refresh' | 
 };
 
 export const generateVerificationToken = (payload: JWTPayload): string => {
-  return jwt.sign(payload, VERIFICATION_TOKEN_SECRET, { expiresIn: '30d' });
+  return jwt.sign(payload, VERIFICATION_TOKEN_SECRET, { expiresIn: '7d' });
 };
 
 export const generateLoginToken = (email: string): string => {
-    return jwt.sign({ email }, LOGIN_TOKEN_SECRET, { expiresIn: '60m' });
+    return jwt.sign({ email }, LOGIN_TOKEN_SECRET, { expiresIn: '7d' });
   };
   

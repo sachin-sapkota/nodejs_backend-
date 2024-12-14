@@ -7,7 +7,7 @@ import { SignupRequestBody } from '../../../types';
 import { env } from "@/common/utils/envConfig";
 import { CronJob } from 'cron';
 const { BASE_URL } = env;
-import { validateSignup } from '../../../common/utils/authValidation';
+import { validateSignup } from '../../../common/validations/authValidations/authValidation';
 
 export const signupHandler = async (req: Request, res: Response): Promise<void> => {
   try {

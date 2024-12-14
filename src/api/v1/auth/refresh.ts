@@ -1,54 +1,54 @@
-// import { Request, Response } from 'express';
-// import { User } from '../../../common/models/User';
-// import { verifyToken, generateTokens } from '../../../common/utils/jwt';
+import { Request, Response } from 'express';
+import { verifyToken, generateTokens } from '../../../common/utils/jwt';
+import { env } from '../../../common/utils/envConfig';
+const { NODE_ENV } = env;
+const isProduction = NODE_ENV === 'production';
 
-// export const refreshHandler = async (req: Request, res: Response): Promise<void> => {
-//   try {
-//     const { refreshToken } = req.body;
+export const refreshHandler = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { cookies } = req;
+    const refreshToken = cookies.refreshToken;
 
-//     if (!refreshToken) {
-//       res.status(400).json({ message: 'Refresh token is required' });
-//       return;
-//     }
+    if (!refreshToken) {
+      res.status(401).json({ message: 'Refresh token missing. Please log in again.' });
+      return;
+    }
 
-//     const decoded = verifyToken(refreshToken, 'refresh');
-//     if (!decoded) {
-//       res.status(401).json({ message: 'Invalid or expired refresh token' });
-//       return;
-//     }
+    const decoded = verifyToken(refreshToken, 'refresh');
+    if (!decoded) {
+      res.status(401).json({ message: 'Invalid or expired refresh token. Please log in again.' });
+      return;
+    }
 
-//     const { userId, email } = decoded;
-//     const user = await User.findOne({ _id: userId, email });
-//     if (!user) {
-//       res.status(401).json({ message: 'User not found' });
-//       return;
-//     }
+    const { userId, email, exp } = decoded as { userId: string; email: string; exp?: number };
 
-//     const tokenIndex = user.refreshToken.indexOf(refreshToken);
-//     if (tokenIndex === -1) {
-//       res.status(401).json({ message: 'Refresh token not recognized' });
-//       return;
-//     }
+    if (exp && Date.now() >= exp * 1000) {
+      res.status(401).json({ message: 'Refresh token expired. Please log in again.' });
+      return;
+    }
 
-//     user.refreshToken.splice(tokenIndex, 1);
+    const { accessToken } = generateTokens({ userId, email });
 
-//     const payload = { userId: user._id.toString(), email: user.email };
-//     const { accessToken, newRefreshToken } = generateTokens(payload);
+    res.cookie('accessToken', accessToken, {
+      httpOnly: true,
+      secure: isProduction,
+      sameSite: 'strict',
+      maxAge: 15 * 60 * 1000
+    });
 
-//     user.refreshToken.push(newRefreshToken);
-//     await user.save();
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: isProduction,
+      sameSite: 'strict',
+      maxAge: 30 * 24 * 60 * 60 * 1000
+    });
 
-//     const isProduction = process.env.NODE_ENV === 'production';
+    res.status(200).json({ message: 'Access token refreshed successfully.' });
+    return;
 
-//     res.cookie('accessToken', accessToken, {
-//       httpOnly: true,
-//       secure: isProduction,
-//       sameSite: 'strict',
-//     });
-
-//     res.status(200).json({ accessToken, refreshToken: newRefreshToken });
-//   } catch (error) {
-//     console.error('Refresh token error:', error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// };
+  } catch (error: any) {
+    console.error('Refresh token error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+    return;
+  }
+};
