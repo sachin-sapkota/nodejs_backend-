@@ -1,28 +1,39 @@
-# 🚀 Express TypeScript Boilerplate 2024
+# Node.js Backend Project
 
-[![Build](https://github.com/edwinhern/express-typescript-2024/actions/workflows/build.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/build.yml)
-[![Test](https://github.com/edwinhern/express-typescript-2024/actions/workflows/test.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/test.yml)
-[![Code Quality](https://github.com/edwinhern/express-typescript-2024/actions/workflows/code-quality.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/code-quality.yml)
-[![Docker Image CI](https://github.com/edwinhern/express-typescript-2024/actions/workflows/docker-image.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/docker-image.yml)
+This repository contains a Node.js-based backend server with user authentication and various API endpoints. It’s designed to be a starting point for applications requiring user registration, login, and other core functionality.
 
-``` code
-Hey There! 🙌 
-🤾 that ⭐️ button if you like this boilerplate. 
-```
+> **Note:** This README is based on the repository at [nodejs_backend-](https://github.com/sachin-sapkota/nodejs_backend-.git). If you have cloned or downloaded that code, the instructions below will help you set up and run the project.
 
-## 🌟 Introduction
+---
 
-Welcome to the Express TypeScript Boilerplate 2024 – a streamlined, efficient, and scalable foundation for building powerful backend services with modern tools and practices in Express.js and TypeScript.
+## Features
 
-## 💡 Motivation
+- **User Registration & Login**: Basic authentication flow with hashed passwords (e.g., bcrypt or similar).
+- **JWT Authentication**: Secure endpoints using JSON Web Tokens.
+- **RESTful API Endpoints**: Pre-built routes for user-related actions.
+- **Database Integration**: Presumably connected to MongoDB (based on the repository’s naming and structure).
+- **Scalable Setup**: Organized folder structure for easy maintenance and potential feature expansion.
 
-This boilerplate aims to:
+---
 
-- ✨ Reduce setup time for new projects
-- 📊 Ensure code consistency and quality
-- ⚡  Facilitate rapid development
-- 🛡️ Encourage best practices in security, testing, and performance
+## Prerequisites
 
+- **Node.js** (v14 or higher recommended)
+- **npm** or **yarn** for package management
+- **MongoDB** (local instance or a hosted solution such as MongoDB Atlas)
+- (Optional) **Redis** if implementing sessions or caching (depending on the code specifics)
+
+---
+
+## Installation & Setup
+
+ **Clone the repository**:
+   ```bash
+   git clone https://github.com/sachin-sapkota/nodejs_backend-.git
+   cd nodejs_backend-
+   ```
+---
+   
 ## 🚀 Features
 
 - 📁 Modular Structure: Organized by feature for easy navigation and scalability
@@ -41,33 +52,53 @@ This boilerplate aims to:
 - 📝 Input Validation with Zod: Strongly typed request validation using `Zod`
 - 🧩 Swagger UI: Interactive API documentation generated from Zod schemas
 
-## 🛠️ Getting Started
+---
 
-### Video Demo
+## Project Structure
+```bash
+nodejs_backend-/
+├── config/
+│   └── db.js              // MongoDB connection logic
+├── controllers/
+│   └── authController.js  // Handles user login, registration
+│   └── userController.js  // Other user-related logic
+├── middlewares/
+│   └── authMiddleware.js  // JWT verification
+├── models/
+│   └── User.js            // Mongoose schema for users
+├── routes/
+│   └── authRoutes.js      // Routes for login, registration
+│   └── userRoutes.js      // Routes for user management
+├── .env                   // Environment variables (not committed)
+├── package.json
+├── server.js              // Main entry point
+└── README.md
+```
+---
 
-For a visual guide, watch the [video demo](https://github.com/user-attachments/assets/b1698dac-d582-45a0-8d61-31131732b74e) to see the setup and running of the project.
+## Environment Variables
+``` bash
+# Server settings
+PORT=3000
 
-### Step-by-Step Guide
+# MongoDB Connection URI
+MONGO_URI=mongodb://localhost:27017/your_db_name
 
-#### Step 1: 🚀 Initial Setup
+# JWT Secret (replace with a secure, randomly generated string)
+JWT_SECRET=your_jwt_secret_here
 
-- Clone the repository: `git clone https://github.com/edwinhern/express-typescript-2024.git`
-- Navigate: `cd express-typescript-2024`
-- Install dependencies: `npm ci`
+# Any other environment variables your code requires
+# For example:
+# SMTP_HOST=smtp.mailtrap.io
+# SMTP_PORT=2525
+# SMTP_USER=xxxx
+# SMTP_PASS=xxxx
+```
+---
 
-#### Step 2: ⚙️ Environment Configuration
-
-- Create `.env`: Copy `.env.template` to `.env`
-- Update `.env`: Fill in necessary environment variables
-
-#### Step 3: 🏃‍♂️ Running the Project
+## 🏃‍♂️ Running the Project
 
 - Development Mode: `npm run dev`
 - Building: `npm run build`
 - Production Mode: Set `.env` to `NODE_ENV="production"` then `npm run build && npm run start`
 
-## 🤝 Feedback and Contributions
-
-We'd love to hear your feedback and suggestions for further improvements. Feel free to contribute and join us in making backend development cleaner and faster!
-
-🎉 Happy coding!
